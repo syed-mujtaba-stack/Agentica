@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+python-dotenv
+openai
+tavily-python
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+semantic-router
