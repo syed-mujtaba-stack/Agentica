@@ -1,0 +1,43 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="core_grad" x1="50" y1="50" x2="150" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Orbiting Ring (Cipher - Green) -->
+  <circle cx="100" cy="100" r="70" stroke="#10B981" stroke-width="2" stroke-dasharray="10 20" opacity="0.6">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="20s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Orbiting Ring (Zenith - Purple) -->
+  <ellipse cx="100" cy="100" rx="85" ry="40" stroke="#8B5CF6" stroke-width="2" opacity="0.5">
+    <animateTransform attributeName="transform" type="rotate" from="360 100 100" to="0 100 100" dur="15s" repeatCount="indefinite" />
+  </ellipse>
+
+  <!-- Central Core (Nexus - Blue/Cyan) -->
+  <circle cx="100" cy="100" r="30" fill="url(#core_grad)" filter="url(#glow)">
+    <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite" />
+     <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Inner Pulse -->
+  <circle cx="100" cy="100" r="20" fill="white" opacity="0.3">
+     <animate attributeName="r" values="10;25;10" dur="3s" repeatCount="indefinite" />
+     <animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Stylized 'A' -->
+  <path d="M100 80 L115 115 H85 Z" stroke="white" stroke-width="3" fill="none" stroke-linejoin="round" opacity="0.9">
+       <animate attributeName="stroke-dasharray" values="0 100; 100 0; 0 100" dur="5s" repeatCount="indefinite" />
+  </path>
+
+</svg>
